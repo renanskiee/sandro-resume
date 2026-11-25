@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandro Villanueva | Barista Application &amp; One-Page Resume</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Warm Artisan Editorial Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"DM Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        serif: ['"Fraunces"', 'Georgia', 'serif'],
+                    },
+                    colors: {
+                        oatBg: '#F4EFE8',
+                        creamCard: '#FCFBF8',
+                        espresso: '#231712',
+                        roast: '#4A352A',
+                        latteMuted: '#78665B',
+                        caramel: '#B46936',
+                        sandBorder: '#E4DBD0',
+                        warmTint: '#EFE7DC'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F4EFE8;
+            background-image: radial-gradient(#DFD5C7 1px, transparent 1px);
+            background-size: 22px 22px;
+            color: #231712;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fraunces', Georgia, serif;
+        }
+
+        /* Editorial Sheet Elevation */
+        .editorial-sheet {
+            background-color: #FCFBF8;
+            border: 1px solid #E4DBD0;
+            box-shadow:
+                0 24px 60px -15px rgba(35, 23, 18, 0.12),
+                0 4px 16px -4px rgba(35, 23, 18, 0.05);
+        }
+
+        /* Interactive Spotlight Segment inside Cover Letter */
+        .letter-paragraph {
+            transition: all 0.25s ease;
+            border-left: 3px solid transparent;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .letter-paragraph.highlighted {
+            background-color: #F4ECE1;
+            border-left-color: #B46936;
+            padding: 0.65rem 0.9rem;
+        }
+
+        /* Subtle Hover Lift for Cards */
+        .info-tile {
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .info-tile:hover {
+            transform: translateY(-2px);
+            border-color: #CBBBA8;
+            box-shadow: 0 10px 24px -10px rgba(35, 23, 18, 0.12);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-caramel/20 selection:text-espresso py-5 sm:py-9 px-3 sm:px-6">
+
+    <!-- =====================================================================
+         ONE-PAGE UNIFIED RESUME & COVER LETTER SHEET
+         ===================================================================== -->
+    <main class="editorial-sheet max-w-5xl mx-auto rounded-[28px] overflow-hidden">
+
+        <!-- 1. TOP ESPRESSO HEADER BAND -->
+        <header class="bg-espresso text-creamCard px-6 sm:px-10 py-7 sm:py-9 relative">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+
+                <!-- Left: Static Photo Frame + Name & Role -->
+                <div class="flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 sm:gap-6">
+                    <!-- Static Photo Frame (Upload sandro.jpg to GitHub in same folder) -->
+                    <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl bg-roast/80 border-2 border-caramel/60 p-1.5 shrink-0 shadow-lg overflow-hidden">
+                        <img
+                            src="sandro.jpg"
+                            alt="Sandro Villanueva"
+                            class="w-full h-full object-cover rounded-xl"
+                            onerror="this.style.display='none'; document.getElementById('sv-monogram').style.display='flex';"
+                        >
+                        <div id="sv-monogram" style="display:none;" class="w-full h-full rounded-xl bg-roast flex flex-col items-center justify-center">
+                            <span class="font-serif text-3xl font-extrabold text-creamCard tracking-tight">SV</span>
+                            <span class="text-[9px] uppercase tracking-widest text-oatBg/75 mt-0.5">21 &bull; Masbate</span>
+                        </div>
+                    </div>
+
+                    <!-- Name, Role & Location -->
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-caramel/25 border border-caramel/50 text-xs font-semibold text-oatBg mb-2.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                            <span>Barista Applicant &bull; Customer Service Background</span>
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+                            Sandro Villanueva
+                        </h1>
+                        <p class="text-sm sm:text-base text-oatBg/85 mt-1 font-medium">
+                            Aspiring Barista &amp; Hospitality Crew &bull; 21 Years Old
+                        </p>
+                        <p class="text-xs sm:text-sm text-oatBg/70 mt-1.5 flex items-center justify-center sm:justify-start gap-1.5">
+                            <i class="fa-solid fa-location-dot text-caramel"></i>
+                            <span>San Pascual, Masbate</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Direct Contact Details -->
+                <div class="flex flex-col items-center md:items-end gap-2 shrink-0">
+                    <a href="tel:09653941673" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-xs sm:text-sm font-medium text-creamCard flex items-center justify-center md:justify-end gap-2 transition">
+                        <i class="fa-solid fa-phone text-caramel"></i>
+                        <span>09653941673</span>
+                    </a>
+                    <a href="mailto:handb8987@gmail.com" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 border border-white/15 text-xs sm:text-sm font-medium text-creamCard flex items-center justify-center md:justify-end gap-2 transition break-all">
+                        <i class="fa-solid fa-envelope text-caramel"></i>
+                        <span>handb8987@gmail.com</span>
+                    </a>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- 2. UNIFIED TWO-COLUMN ONE-PAGE BODY -->
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+
+            <!-- LEFT SIDEBAR (4 Columns): Personal Info & Core Skills -->
+            <aside class="lg:col-span-4 bg-warmTint/65 border-b lg:border-b-0 lg:border-r border-sandBorder p-6 sm:p-8 space-y-7">
+
+                <!-- Personal Details -->
+                <div>
+                    <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-caramel mb-3">
+                        <i class="fa-solid fa-id-badge"></i>
+                        <span>Personal Profile</span>
+                    </div>
+                    <div class="bg-creamCard border border-sandBorder rounded-2xl p-4 space-y-2.5 text-xs sm:text-sm">
+                        <div class="flex justify-between gap-2 border-b border-sandBorder/70 pb-2">
+                            <span class="text-latteMuted">Full Name</span>
+                            <span class="font-semibold text-espresso text-right">Sandro Villanueva</span>
+                        </div>
+                        <div class="flex justify-between gap-2 border-b border-sandBorder/70 pb-2">
+                            <span class="text-latteMuted">Birthday</span>
+                            <span class="font-semibold text-espresso text-right">September 24, 2005</span>
+                        </div>
+                        <div class="flex justify-between gap-2 border-b border-sandBorder/70 pb-2">
+                            <span class="text-latteMuted">Age</span>
+                            <span class="font-semibold text-espresso">21 Years Old</span>
+                        </div>
+                        <div class="flex justify-between gap-2 border-b border-sandBorder/70 pb-2">
+                            <span class="text-latteMuted">Address</span>
+                            <span class="font-semibold text-espresso text-right">San Pascual, Masbate</span>
+                        </div>
+                        <div class="flex justify-between gap-2">
+                            <span class="text-latteMuted">Barista Training</span>
+                            <span class="font-semibold text-emerald-700 text-right">100% Willing to Learn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Strengths & Skills -->
+                <div>
+                    <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-caramel mb-3">
+                        <i class="fa-solid fa-star"></i>
+                        <span>Core Skills</span>
+                    </div>
+                    <div class="space-y-2.5">
+                        <div class="info-tile bg-creamCard border border-sandBorder rounded-xl p-3 flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-warmTint flex items-center justify-center text-caramel shrink-0 mt-0.5">
+                                <i class="fa-solid fa-headset text-xs"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-sans font-bold text-xs sm:text-sm text-espresso">Customer Service</h3>
+                                <p class="text-[11px] sm:text-xs text-roast/80 leading-snug mt-0.5">Friendly, respectful front-line guest care from canteen and rental operations.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-tile bg-creamCard border border-sandBorder rounded-xl p-3 flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-warmTint flex items-center justify-center text-caramel shrink-0 mt-0.5">
+                                <i class="fa-solid fa-comments text-xs"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-sans font-bold text-xs sm:text-sm text-espresso">Communication &amp; Negotiation</h3>
+                                <p class="text-[11px] sm:text-xs text-roast/80 leading-snug mt-0.5">Clear order taking, explaining terms, and resolving customer concerns politely.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-tile bg-creamCard border border-sandBorder rounded-xl p-3 flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-warmTint flex items-center justify-center text-caramel shrink-0 mt-0.5">
+                                <i class="fa-solid fa-layer-group text-xs"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-sans font-bold text-xs sm:text-sm text-espresso">Multitasking</h3>
+                                <p class="text-[11px] sm:text-xs text-roast/80 leading-snug mt-0.5">Handling counter service, food prep, and cleanliness at the same time.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-tile bg-creamCard border border-sandBorder rounded-xl p-3 flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-warmTint flex items-center justify-center text-caramel shrink-0 mt-0.5">
+                                <i class="fa-solid fa-heart-pulse text-xs"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-sans font-bold text-xs sm:text-sm text-espresso">Can Handle Stress</h3>
+                                <p class="text-[11px] sm:text-xs text-roast/80 leading-snug mt-0.5">Stays calm, patient, and composed during peak rush hours.</p>
+                            </div>
+                        </div>
+
+                        <div class="info-tile bg-creamCard border border-sandBorder rounded-xl p-3 flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-warmTint flex items-center justify-center text-caramel shrink-0 mt-0.5">
+                                <i class="fa-solid fa-clock text-xs"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-sans font-bold text-xs sm:text-sm text-espresso">Proper Time Management</h3>
+                                <p class="text-[11px] sm:text-xs text-roast/80 leading-snug mt-0.5">Punctual, organized with schedules, and efficient with daily tasks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+
+            <!-- RIGHT MAIN CONTENT (8 Columns): Cover Letter + Work Experience -->
+            <div class="lg:col-span-8 p-6 sm:p-9 space-y-8">
+
+                <!-- A. COVER LETTER SECTION -->
+                <section>
+                    <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-4 border-b border-sandBorder">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-widest text-caramel">Cover Letter</span>
+                            <h2 class="text-xl sm:text-2xl font-bold text-espresso">Application for Barista Position</h2>
+                        </div>
+                        <span class="text-xs font-medium text-latteMuted">Tap a highlight chip below</span>
+                    </div>
+
+                    <!-- Interactive Highlight Pills -->
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <button type="button" onclick="toggleHighlight('willing', this)" class="hl-chip px-3 py-1.5 rounded-full text-xs font-semibold bg-warmTint hover:bg-caramel hover:text-white text-espresso border border-sandBorder transition cursor-pointer">
+                            <i class="fa-solid fa-mug-hot mr-1"></i> Willing to Learn Barista Craft
+                        </button>
+                        <button type="button" onclick="toggleHighlight('service', this)" class="hl-chip px-3 py-1.5 rounded-full text-xs font-semibold bg-warmTint hover:bg-caramel hover:text-white text-espresso border border-sandBorder transition cursor-pointer">
+                            <i class="fa-solid fa-handshake mr-1"></i> Customer &amp; Negotiation Experience
+                        </button>
+                        <button type="button" onclick="toggleHighlight('pressure', this)" class="hl-chip px-3 py-1.5 rounded-full text-xs font-semibold bg-warmTint hover:bg-caramel hover:text-white text-espresso border border-sandBorder transition cursor-pointer">
+                            <i class="fa-solid fa-bolt mr-1"></i> Fast-Paced Multitasking &amp; Calmness
+                        </button>
+                    </div>
+
+                    <!-- Letter Paragraphs -->
+                    <div class="space-y-3 text-xs sm:text-sm leading-relaxed text-roast">
+                        <p class="font-semibold text-espresso">Dear Hiring Manager,</p>
+
+                        <p id="para-willing" class="letter-paragraph">
+                            I am writing to apply for the <strong>Barista</strong> position at your caf&eacute;. Even though I do not have prior experience making specialty coffee yet, I am genuinely eager and willing to learn everything from scratch—from espresso preparation and drink recipes to keeping the counter spotless and welcoming.
+                        </p>
+
+                        <p id="para-service" class="letter-paragraph">
+                            My hands-on background working as a <strong>Canteen Crew</strong> member and assisting customers in a <strong>Car Rental business</strong> taught me how to communicate clearly, negotiate politely, and make every guest feel valued. Managing customers during car rentals strengthened my patience, listening skills, and ability to handle inquiries smoothly.
+                        </p>
+
+                        <p id="para-pressure" class="letter-paragraph">
+                            In fast-paced food and customer service environments, I have learned how to multitask, manage my time properly, and stay calm under stress during busy rush hours. I would be grateful for the opportunity to train with your team and bring reliable, positive energy to your caf&eacute; every day.
+                        </p>
+
+                        <div class="pt-2 flex flex-wrap items-baseline justify-between gap-2">
+                            <div>
+                                <p class="text-latteMuted text-xs">Sincerely,</p>
+                                <p class="font-serif text-base sm:text-lg font-bold text-espresso">Sandro Villanueva</p>
+                            </div>
+                            <p class="text-xs text-latteMuted">09653941673 &bull; handb8987@gmail.com</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- B. WORK EXPERIENCE SECTION -->
+                <section>
+                    <div class="pb-3 mb-4 border-b border-sandBorder">
+                        <span class="text-[11px] font-bold uppercase tracking-widest text-caramel">Hands-On Background</span>
+                        <h2 class="text-xl sm:text-2xl font-bold text-espresso">Work Experience</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Experience 1: Car Rental -->
+                        <div class="info-tile bg-warmTint/45 border border-sandBorder rounded-2xl p-4 sm:p-5">
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-espresso text-creamCard text-[11px] font-bold">
+                                    Customer Operations
+                                </span>
+                                <i class="fa-solid fa-car-side text-caramel"></i>
+                            </div>
+                            <h3 class="text-base font-bold text-espresso">Customer Management Staff</h3>
+                            <p class="text-xs font-semibold text-caramel mb-2.5">Car Rental Business</p>
+                            <ul class="space-y-1.5 text-xs text-roast leading-relaxed">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-caramel mt-1 shrink-0"></i>
+                                    <span>Assisted and managed customers smoothly during vehicle bookings, inquiries, and turnovers.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-caramel mt-1 shrink-0"></i>
+                                    <span>Practiced clear communication, polite negotiation, and proper schedule/time management.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience 2: Canteen Crew -->
+                        <div class="info-tile bg-warmTint/45 border border-sandBorder rounded-2xl p-4 sm:p-5">
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-espresso text-creamCard text-[11px] font-bold">
+                                    Food &amp; Beverage Service
+                                </span>
+                                <i class="fa-solid fa-utensils text-caramel"></i>
+                            </div>
+                            <h3 class="text-base font-bold text-espresso">Canteen Crew</h3>
+                            <p class="text-xs font-semibold text-caramel mb-2.5">Food Service Operations</p>
+                            <ul class="space-y-1.5 text-xs text-roast leading-relaxed">
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-caramel mt-1 shrink-0"></i>
+                                    <span>Served customers quickly and courteously during busy meal rush hours without losing composure.</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fa-solid fa-check text-caramel mt-1 shrink-0"></i>
+                                    <span>Balanced order taking, counter prep, and strict cleanliness through effective multitasking.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- 3. SUBTLE FOOTER -->
+        <footer class="bg-warmTint/80 border-t border-sandBorder px-6 py-3.5 text-center text-xs text-latteMuted">
+            Sandro Villanueva &bull; San Pascual, Masbate &bull; Ready to Train as Barista
+        </footer>
+
+    </main>
+
+    <!-- =====================================================================
+         LIGHTWEIGHT INTERACTIVE HIGHLIGHT SCRIPT
+         ===================================================================== -->
+    <script>
+        let currentKey = null;
+
+        function toggleHighlight(key, btn) {
+            const targetPara = document.getElementById(`para-${key}`);
+            const allParas = document.querySelectorAll('.letter-paragraph');
+            const allChips = document.querySelectorAll('.hl-chip');
+
+            if (currentKey === key) {
+                allParas.forEach(p => p.classList.remove('highlighted'));
+                allChips.forEach(c => c.classList.remove('!bg-caramel', '!text-white'));
+                currentKey = null;
+                return;
+            }
+
+            allParas.forEach(p => p.classList.remove('highlighted'));
+            allChips.forEach(c => c.classList.remove('!bg-caramel', '!text-white'));
+
+            if (targetPara) targetPara.classList.add('highlighted');
+            if (btn) btn.classList.add('!bg-caramel', '!text-white');
+            currentKey = key;
+        }
+    </script>
+</body>
+</html>
